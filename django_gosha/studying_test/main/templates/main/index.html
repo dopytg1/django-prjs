@@ -1,0 +1,23 @@
+{% extends 'main/base.html '%}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+{% for each in tasks %}
+<div class="alert alert-warning mt-5">
+    <h2>
+        {{ each.title }}
+    </h2>
+    <p class="fs-5 text-muted">
+        {{ each.task }}
+    </p>
+    <a href="change/{{ each.id }}" type="button" class="btn btn-primary">Изменить</a>
+    <a href="delete/{{ each.id }}" type="button" class="btn btn-primary">Удалить</a>
+    <!-- <a href="delete/{{ each.id }}">Удалить </a> -->
+</div>
+{% endfor %}
+
+{% endblock %}

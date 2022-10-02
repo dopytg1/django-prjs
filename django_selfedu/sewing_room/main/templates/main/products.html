@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum animi tenetur, assumenda quod quis ratione nam corporis? Quasi perferendis dolores tempore repudiandae tempora beatae similique praesentium molestias id, sed sapiente.
+{% block content %}
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Наши платья</h1>
+                    <p>Высокое качество пошива, турецкие ткани</p>
+                </div>
+            </div>
+        </div>
+        <div class="row special-list">
+            {% for each in dresses %}
+                <div class="col-lg-3 col-md-6 special-grid">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="{{ each.photo.url }}" class="img-fluid">
+                        </div>
+                        <div class="why-text">
+                            <h1>{{ each.title }}</h1>
+                            <h4>{{ each.text }}</h4>
+                            <h5>{{ each.price }}</h5>
+                        </div>
+                    </div>
+                </div>
+            
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="footer-copyright">
+    <p class="footer-company">07.09.2022</p>
+</div>
+{% endblock %}

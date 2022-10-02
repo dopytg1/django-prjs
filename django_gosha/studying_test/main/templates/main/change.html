@@ -1,0 +1,20 @@
+{% extends 'main/base.html '%}
+
+{% block title %}
+Изменить
+{% endblock %}
+
+{% block content %}
+<form class="container" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Новое название вашей цели</label>
+        <input class="form-control" type="text" name="title" value="{{person.name}}" />
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Ваше новое описание</label>
+        <input class="form-control" type="text" name="goal" value="{{person.age}}" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

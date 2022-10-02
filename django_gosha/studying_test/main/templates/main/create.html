@@ -1,0 +1,20 @@
+{% extends 'main/base.html '%}
+
+{% block title %}
+create goal
+{% endblock %}
+
+{% block create %}
+<form class="container" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Название вашей цели</label>
+      {{ form.title }}
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Описание цели</label>
+      {{ form.task }}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
